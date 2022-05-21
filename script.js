@@ -79,7 +79,6 @@ giveOnMouseClickEvents(images);
 
 function keyDownEvent(event)
 {
-    console.log(event);
     const rightImageTitle = document.querySelector(".right-image-title");
     let id = Number(rightImageTitle.id);
     if(event.key === "ArrowUp" && id>=1)
@@ -97,3 +96,16 @@ function keyDownEvent(event)
 }
 
 document.addEventListener("keydown",keyDownEvent);
+
+const rightImageTitle = document.querySelector(".right-image-title");
+
+rightImageTitle.addEventListener("input",function(){
+    const rightImageTitle = document.querySelector(".right-image-title");
+    const id = Number(rightImageTitle.id);
+    const value = rightImageTitle.value;
+    
+    const infoImage = document.querySelector(`.image-info[id="${id}"]`);
+    const leftImageTitle = infoImage.children[1];
+    images[id].title = value;
+    leftImageTitle.innerHTML = value;
+});
