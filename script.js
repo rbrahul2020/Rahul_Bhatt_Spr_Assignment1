@@ -45,3 +45,33 @@ function showImage(image)
 
 const defaultShowImageID = 0;
 showImage(images[defaultShowImageID]);
+
+// remove "image-info-selected" class from presently showing image
+function removeSelectedClass()
+{
+    const rightImageTitle = document.querySelector(".right-image-title");
+    const id = Number(rightImageTitle.id);
+
+    const imageInfo = document.querySelector(`.image-info[id="${id}"]`);
+    imageInfo.classList.remove("image-info-selected");
+}
+
+// give OnClick Events to all "image-info" elements
+function giveOnMouseClickEvents(images)
+{
+    const imagesInfo = document.querySelectorAll(".image-info");
+    function giveEvent(imageInfo)
+    {
+        const id = Number(imageInfo.id);
+        imagesInfo[id].addEventListener("click",function(){
+            removeSelectedClass();
+            showImage(images[id]);
+        });
+    }
+
+    imagesInfo.forEach(function(imageInfo){
+        giveEvent(imageInfo);
+    });
+}
+
+giveOnMouseClickEvents(images);
