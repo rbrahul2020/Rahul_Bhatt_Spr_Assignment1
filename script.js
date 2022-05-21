@@ -7,13 +7,16 @@ console.log(imagesListContainer);
 
 const length = images.length;
 
-let content = "";
-for(let i=0;i<length;i++)
-{
+// iterate all the images
+const content = images.reduce(function(content, image){
     content += `<div class="image-info" id="2">
-    <img class="left-image" src=${images[i].previewImage} />
-    <h6 class="left-image-title">${images[i].title}</h6>
-    </div>`
-}
+    <img class="left-image" src=${image.previewImage} />
+    <h6 class="left-image-title">${image.title}</h6>
+    </div>`;
 
+    return(content);
+},"");
+
+// assign images-list-container data
 imagesListContainer.innerHTML = content;
+
