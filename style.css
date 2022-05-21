@@ -54,7 +54,6 @@ body{
     font-size: 100%;
     overflow: hidden;
     white-space: nowrap; 
-    text-overflow : ellipsis;
 }
 
 .image-container{

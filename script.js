@@ -1,8 +1,26 @@
 import {images} from './data.js'
 
 const length = images.length;
-
+const maxTitleLength = 26;
 // add id to each obj of "images" array
+
+function giveTitle(title)
+{
+    const length = title.length
+    if(length <= maxTitleLength) return(title);
+    let shortTitle = "",prefix = maxTitleLength/2-1;
+    for(let i=0;i<prefix;i++)
+    {
+        shortTitle += title[i];
+    }
+    shortTitle += "....";
+    for(let i=prefix-1;i>=0;i--)
+    {
+        shortTitle += title[length-i-1];
+    }
+    return(shortTitle);
+}
+
 for(let i=0;i<length;i++)
 {
    images[i].id = i;
@@ -16,7 +34,7 @@ const imagesListContainer = document.querySelector(".images-list-container");
 const content = images.reduce(function(content, image){
     content += `<div class="image-info" id=${image.id}>
     <img class="left-image" src=${image.previewImage} />
-    <h6 class="left-image-title">${image.title}</h6>
+    <h6 class="left-image-title">${giveTitle(image.title)}</h6>
     </div>`;
 
     return(content);
@@ -107,5 +125,5 @@ rightImageTitle.addEventListener("input",function(){
     const infoImage = document.querySelector(`.image-info[id="${id}"]`);
     const leftImageTitle = infoImage.children[1];
     images[id].title = value;
-    leftImageTitle.innerHTML = value;
+    leftImageTitle.innerHTML = giveTitle(value);
 });
