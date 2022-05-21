@@ -75,3 +75,25 @@ function giveOnMouseClickEvents(images)
 }
 
 giveOnMouseClickEvents(images);
+
+
+function keyDownEvent(event)
+{
+    console.log(event);
+    const rightImageTitle = document.querySelector(".right-image-title");
+    let id = Number(rightImageTitle.id);
+    if(event.key === "ArrowUp" && id>=1)
+    {
+        id--;
+        removeSelectedClass();
+        showImage(images[id]);
+    }
+    else if(event.key === "ArrowDown" && id<(images.length-1))
+    {
+        id++;
+        removeSelectedClass();
+        showImage(images[id]);
+    }
+}
+
+document.addEventListener("keydown",keyDownEvent);
