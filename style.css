@@ -61,3 +61,22 @@ body{
     height: 100%;
     border: 1px solid green;
 }
+
+.image-container-image{
+    width : 100%;
+    height: 94%;
+    border: 1px solid plum;
+}
+
+.right-image{
+    width: 100%;
+    height: 100%;
+    border: 1px solid purple;
+}
+
+input{
+    width: 98%;
+    height: 5%;
+    text-align: center;
+    border : none;
+}
