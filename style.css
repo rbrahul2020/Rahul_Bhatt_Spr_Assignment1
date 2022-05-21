@@ -50,7 +50,10 @@ body{
     margin-right: 5px;
     width: 200px;
     height: 30%;
-    display: inline-block; 
+    display: inline-block;
+    font-size: 100%;
+    overflow: hidden;
+    white-space: nowrap; 
 }
 
 .image-container{
