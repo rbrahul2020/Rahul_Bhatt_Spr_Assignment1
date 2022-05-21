@@ -1,0 +1,27 @@
+body{
+    width : 98vw;
+    height: 98vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    width : 850px;
+    height: 800px;
+    border: 1px solid royalblue;
+    display : flex;
+    justify-content: space-between;
+}
+
+.images-list-container{
+    width : 300px;
+    height: 100%;
+    border: 1px solid red;
+}
+
+.image-container{
+    width : 520px;
+    height: 100%;
+    border: 1px solid green;
+}
