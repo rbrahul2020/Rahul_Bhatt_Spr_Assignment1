@@ -1,7 +1,6 @@
 body{
     width : 98vw;
     height: 98vh;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
 }
@@ -9,7 +8,7 @@ body{
 .container{
     width : 850px;
     height: 800px;
-    border: 1px solid royalblue;
+    margin-top: 50px;
     display : flex;
     justify-content: space-between;
 }
@@ -17,13 +16,11 @@ body{
 .images-list-container{
     width : 300px;
     height: 100%;
-    border: 1px solid red;
 }
 
 .image-info{
     width : 100%;
     height: 10%;
-    border: 1px solid green;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,11 +35,11 @@ body{
     width: 25%;
     height: 80%;
     border: 1px solid gold;
+    margin-left: 4px;
     border-radius : 1em;
 }
 
 .left-image-title{
-    border: 1px solid brown;
     margin-block-start: 0px;
     margin-block-end: 0px;
     padding-left: 5px;
@@ -59,19 +56,16 @@ body{
 .image-container{
     width : 520px;
     height: 100%;
-    border: 1px solid green;
 }
 
 .image-container-image{
     width : 100%;
     height: 94%;
-    border: 1px solid plum;
 }
 
 .right-image{
     width: 100%;
     height: 100%;
-    border: 1px solid purple;
 }
 
 input{

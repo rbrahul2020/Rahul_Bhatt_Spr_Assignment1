@@ -8,12 +8,12 @@ function giveTitle(title)
 {
     const length = title.length
     if(length <= maxTitleLength) return(title);
-    let shortTitle = "",prefix = maxTitleLength/2-1;
+    let shortTitle = "",prefix = maxTitleLength/2-2;
     for(let i=0;i<prefix;i++)
     {
         shortTitle += title[i];
     }
-    shortTitle += "....";
+    shortTitle += "...";
     for(let i=prefix-1;i>=0;i--)
     {
         shortTitle += title[length-i-1];
