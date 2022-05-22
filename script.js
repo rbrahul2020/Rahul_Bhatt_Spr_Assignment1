@@ -83,9 +83,10 @@ function giveOnMouseClickEvents(images)
     function giveEvent(imageInfo)
     {
         const id = Number(imageInfo.id);
-        imagesInfo[id].addEventListener("click",function(){
+        imageInfo.addEventListener("click",function(){
             removeSelectedClass();
-            showImage(images[id]);
+            const image = images[id];
+            showImage(image);
         });
     }
 
@@ -105,13 +106,15 @@ function keyDownEvent(event)
     {
         id--;
         removeSelectedClass();
-        showImage(images[id]);
+        const image = images[id];
+        showImage(image);
     }
     else if(event.key === "ArrowDown" && id<(images.length-1))
     {
         id++;
         removeSelectedClass();
-        showImage(images[id]);
+        const image = images[id];
+        showImage(image);
     }
 }
 
