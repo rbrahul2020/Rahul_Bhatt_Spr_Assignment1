@@ -1,7 +1,13 @@
 import {images} from './data.js'
 
 const length = images.length;
-const maxTitleLength = 26;
+
+for(let i=0;i<length;i++)
+{
+   images[i].id = i;
+}
+
+const maxTitleLength = 28;
 // add id to each obj of "images" array
 
 function giveTitle(title)
@@ -19,11 +25,6 @@ function giveTitle(title)
         shortTitle += title[length-i-1];
     }
     return(shortTitle);
-}
-
-for(let i=0;i<length;i++)
-{
-   images[i].id = i;
 }
 
 const imagesListContainer = document.querySelector(".images-list-container");
