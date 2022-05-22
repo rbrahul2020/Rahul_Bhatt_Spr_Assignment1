@@ -1,11 +1,10 @@
 import {images} from './data.js'
 
-const length = images.length;
-
-for(let i=0;i<length;i++)
-{
-   images[i].id = i;
-}
+images.reduce(function(id,image){
+    image.id = id;
+    id++;
+    return(id);
+},0);
 
 const maxTitleLength = 28;
 // add id to each obj of "images" array
@@ -33,9 +32,10 @@ const imagesListContainer = document.querySelector(".images-list-container");
 
 // iterate all the images
 const content = images.reduce(function(content, image){
-    content += `<div class="image-info" id=${image.id}>
-    <img class="left-image" src=${image.previewImage} />
-    <h6 class="left-image-title">${giveTitle(image.title)}</h6>
+    const {id,previewImage,title} = image;
+    content += `<div class="image-info" id=${id}>
+    <img class="left-image" src=${previewImage} />
+    <h6 class="left-image-title">${giveTitle(title)}</h6>
     </div>`;
 
     return(content);
@@ -63,7 +63,8 @@ function showImage(image)
 }
 
 const defaultShowImageID = 0;
-showImage(images[defaultShowImageID]);
+const image = images[defaultShowImageID];
+showImage(image);
 
 // remove "image-info-selected" class from presently showing image
 function removeSelectedClass()
