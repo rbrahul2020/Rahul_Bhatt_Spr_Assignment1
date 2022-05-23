@@ -11,7 +11,7 @@
     margin-top: 50px;
     display : flex;
     justify-content: space-between;
-    overflow-y: auto;
+    overflow-x: auto;
 }
 
 .images-list-container{
